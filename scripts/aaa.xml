@@ -2,7 +2,7 @@
 <layout 
     xmlns___android="http://schemas.android.com/apk/res/android" 
     xmlns___app="http://schemas.android.com/apk/res-auto" 
-    xmlns___bind="http://schemas.android.com/tools">
+    xmlns___tools="http://schemas.android.com/tools">
 
     <data>
         <variable name="binding" type="com.sample.myapplication.binding.SampleBinding">

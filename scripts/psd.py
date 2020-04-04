@@ -146,7 +146,7 @@ class RootLayer(NodeLayer):
 			l.dump(0, 0, root)
 		self.setAttribute(layout, "xmlns:android", "http://schemas.android.com/apk/res/android")
 		self.setAttribute(layout, "xmlns:app", "http://schemas.android.com/apk/res-auto")
-		self.setAttribute(layout, "xmlns:bind", "http://schemas.android.com/tools")
+		self.setAttribute(layout, "xmlns:tools", "http://schemas.android.com/tools")
 		self.setIdAttribute(root, 'root')
 		self.setWidthAttribute(root, 'match_parent')
 		self.setHeightAttribute(root, 'match_parent')
@@ -154,7 +154,6 @@ class RootLayer(NodeLayer):
 	def __writeXml(self, root):
 		self.__indent(root)
 		tree = etree.ElementTree(root)
-		tree.write('aaa.xml', encoding="utf-8", xml_declaration=True)
 		content = '<?xml version=\'1.0\' encoding=\'utf-8\'?>\n'
 		content += etree.tostring(root).decode('utf-8').replace(DUMMY_COLON, ':').replace(' \n', '\n')
 		with open(outputFile, mode='w') as f:
