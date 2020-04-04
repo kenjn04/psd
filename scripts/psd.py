@@ -112,16 +112,27 @@ class RootLayer(NodeLayer):
 		self.layers = self.scan()
 
 	def dump(self, left, top, parent = None):
-		root = etree.Element(self.elementName)
+		layout = etree.Element('layout')
+		self.__dumpBinding(layout)
+		self.__dumpLayout(layout)
+		self.__writeXml(layout)
+
+	def __dumpBinding(self, layout):
+		data = etree.SubElement(layout, 'data')
+		variable = etree.SubElement(data, 'variable')
+		variable.set("name", "binding")
+		variable.set("type", "com.sample.myapplication.SampleBinding")
+
+	def __dumpLayout(self, layout):
+		root = etree.SubElement(layout, self.elementName)
 		for l in self.layers:
 			l.dump(0, 0, root)
-		self.setAttribute(root, "xmlns:android", "http://schemas.android.com/apk/res/android")
-		self.setAttribute(root, "xmlns:app", "http://schemas.android.com/apk/res-auto")
-		self.setAttribute(root, "xmlns:tools", "http://schemas.android.com/tools"'root')
+		self.setAttribute(layout, "xmlns:android", "http://schemas.android.com/apk/res/android")
+		self.setAttribute(layout, "xmlns:app", "http://schemas.android.com/apk/res-auto")
+		self.setAttribute(layout, "xmlns:bind", "http://schemas.android.com/tools")
 		self.setIdAttribute(root, 'root')
 		self.setWidthAttribute(root, 'match_parent')
 		self.setHeightAttribute(root, 'match_parent')
-		self.__writeXml(root)
 
 	def __writeXml(self, root):
 		self.__indent(root)
@@ -135,7 +146,10 @@ class RootLayer(NodeLayer):
 	def __indent(self, elem, level = 0):
 		n = len(elem)
 		if n:
-			elem.text = '\n\n' + (level + 1) * INDENT_SPACE
+			if elem.tag == 'data':
+				elem.text = '\n' + (level + 1) * INDENT_SPACE
+			else:
+				elem.text = '\n\n' + (level + 1) * INDENT_SPACE
 			for i in range(0, n):
 				if (i + 1) == n:
 					elem[i].tail = '\n' + level * INDENT_SPACE

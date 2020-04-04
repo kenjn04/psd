@@ -1,143 +1,135 @@
 <?xml version='1.0' encoding='utf-8'?>
-<layout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:bind="http://schemas.android.com/tools">
-
-    <data>
-        <variable name="binding" type="com.sample.myapplication.SampleBinding">
-        </variable>
-    </data>
-
-    <FrameLayout
+<FrameLayout
     android:id="@+id/root"
     android:layout_height="match_parent"
-    android:layout_width="match_parent">
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/toolsroot">
 
-        <ImageView
+    <ImageView
             android:id="@+id/brush_stroke"
             android:layout_height="413dp"
             android:layout_marginLeft="-142dp"
             android:layout_marginTop="267dp"
             android:layout_width="1426dp"
             app:srcCompat="@drawable/brush_stroke">
-        </ImageView>
+    </ImageView>
 
-        <ImageView
+    <ImageView
             android:id="@+id/rectangle"
             android:layout_height="80dp"
             android:layout_marginLeft="51dp"
             android:layout_marginTop="757dp"
             android:layout_width="460dp"
             app:srcCompat="@drawable/rectangle">
-        </ImageView>
+    </ImageView>
 
-        <ImageView
+    <ImageView
             android:id="@+id/waffel"
             android:layout_height="954dp"
             android:layout_marginLeft="1097dp"
             android:layout_marginTop="-174dp"
             android:layout_width="675dp"
             app:srcCompat="@drawable/waffel">
-        </ImageView>
+    </ImageView>
 
-        <ImageView
+    <ImageView
             android:id="@+id/food"
             android:layout_height="27dp"
             android:layout_marginLeft="1074dp"
             android:layout_marginTop="227dp"
             android:layout_width="23dp"
             app:srcCompat="@drawable/food">
-        </ImageView>
+    </ImageView>
 
-        <ImageView
+    <ImageView
             android:id="@+id/food_1"
             android:layout_height="27dp"
             android:layout_marginLeft="865dp"
             android:layout_marginTop="737dp"
             android:layout_width="23dp"
             app:srcCompat="@drawable/food_1">
-        </ImageView>
+    </ImageView>
 
-        <ImageView
+    <ImageView
             android:id="@+id/food_2"
             android:layout_height="27dp"
             android:layout_marginLeft="926dp"
             android:layout_marginTop="157dp"
             android:layout_width="27dp"
             app:srcCompat="@drawable/food_2">
-        </ImageView>
+    </ImageView>
 
-        <ImageView
+    <ImageView
             android:id="@+id/tomato_sauce"
             android:layout_height="208dp"
             android:layout_marginLeft="807dp"
             android:layout_marginTop="246dp"
             android:layout_width="211dp"
             app:srcCompat="@drawable/tomato_sauce">
-        </ImageView>
+    </ImageView>
 
-        <ImageView
+    <ImageView
             android:id="@+id/tomato"
             android:layout_height="239dp"
             android:layout_marginLeft="676dp"
             android:layout_marginTop="-6dp"
             android:layout_width="237dp"
             app:srcCompat="@drawable/tomato">
-        </ImageView>
+    </ImageView>
 
-        <ImageView
+    <ImageView
             android:id="@+id/orange"
             android:layout_height="272dp"
             android:layout_marginLeft="546dp"
             android:layout_marginTop="750dp"
             android:layout_width="276dp"
             app:srcCompat="@drawable/orange">
-        </ImageView>
+    </ImageView>
 
-        <ImageView
+    <ImageView
             android:id="@+id/title"
             android:layout_height="122dp"
             android:layout_marginLeft="116dp"
             android:layout_marginTop="398dp"
             android:layout_width="506dp"
             app:srcCompat="@drawable/title">
-        </ImageView>
+    </ImageView>
 
-        <ImageView
+    <ImageView
             android:id="@+id/image_20_off"
             android:layout_height="96dp"
             android:layout_marginLeft="243dp"
             android:layout_marginTop="513dp"
             android:layout_width="441dp"
             app:srcCompat="@drawable/image_20_off">
-        </ImageView>
+    </ImageView>
 
-        <ImageView
+    <ImageView
             android:id="@+id/voucher_id_56893"
             android:layout_height="30dp"
             android:layout_marginLeft="92dp"
             android:layout_marginTop="783dp"
             android:layout_width="379dp"
             app:srcCompat="@drawable/voucher_id_56893">
-        </ImageView>
+    </ImageView>
 
-        <ImageView
+    <ImageView
             android:id="@+id/web"
             android:layout_height="27dp"
             android:layout_marginLeft="991dp"
             android:layout_marginTop="814dp"
             android:layout_width="728dp"
             app:srcCompat="@drawable/web">
-        </ImageView>
+    </ImageView>
 
-        <ImageView
+    <ImageView
             android:id="@+id/place_your_logo_here_double_click_to_edit"
             android:layout_height="107dp"
             android:layout_marginLeft="53dp"
             android:layout_marginTop="50dp"
             android:layout_width="386dp"
             app:srcCompat="@drawable/place_your_logo_here_double_click_to_edit">
-        </ImageView>
-    </FrameLayout>
-</layout>
+    </ImageView>
+</FrameLayout>
