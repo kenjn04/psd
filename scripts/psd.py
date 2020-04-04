@@ -179,8 +179,10 @@ class RootLayer(NodeLayer):
 		with open(bindingInterfacePath, mode='w') as f:
 			f.write("package %s\n\n" % bindingDirectory.replace('/', '.'))
 			f.write("import %s.%s\n" % (bindingImportBase, bindingImport['string']))
+			f.write("import %s.%s\n" % (enumDirectory.replace('/', '.'), "Test"))
 			f.write("\ninterface %s {\n\n" % bindingInterface)
 			f.write("%sval %s: %s\n" % (INDENT_SPACE, "name", bindingType['string']))
+			f.write("%sval %s: %s\n" % (INDENT_SPACE, "mode", "Test"))
 			f.write("\n}")
 
 	def __writeEnum(self):
