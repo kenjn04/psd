@@ -79,23 +79,24 @@ class NodeLayer(Layer):
 	def __init__(self, layer, level):
 		super().__init__(layer, level)
 		self.elementName = "FrameLayout"
-		self.layers = []
 		self.scan()
 
 	def scan(self):
+		layers = []
 		for child in self.layer:
 			if isinstance(child, Group):
-				self.layers.append(GroupLayer(child, self.level + 1))
+				layers.extend(GroupLayer(child, self.level + 1).scan())
 #			elif isinstance(child, Pixel):
 #				self.layers.append(PixelLayer(child, self.level + 1))
 			elif isinstance(child, Shape):
-				self.layers.append(ShapeLayer(child, self.level + 1))
+				layers.append(ShapeLayer(child, self.level + 1))
 			elif isinstance(child, SmartObject):
-				self.layers.append(SmartObjectLayer(child, self.level + 1))
+				layers.append(SmartObjectLayer(child, self.level + 1))
 			elif isinstance(child, Type):
-				self.layers.append(TypeLayer(child, self.level + 1))
+				layers.append(TypeLayer(child, self.level + 1))
 			else:
 				print("Ignore at this moment: %s" % child)
+		return layers
 
 class RootLayer(NodeLayer):
 	def __init__(self, psdPath):
@@ -108,6 +109,7 @@ class RootLayer(NodeLayer):
 				os.remove(file)
 		else:
 			os.mkdir(drawableDirectory)
+		self.layers = self.scan()
 
 	def dump(self, left, top, parent = None):
 		root = etree.Element(self.elementName)
