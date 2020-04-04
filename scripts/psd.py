@@ -178,8 +178,6 @@ class RootLayer(NodeLayer):
 					else:
 						elem[i].tail = '\n\n' + (level + 1) * INDENT_SPACE
 				self.__indent(elem[i], level + 1)
-		else:
-			elem.text = '\n' + level * INDENT_SPACE
 
 	def __writeBindingInterface(self):
 		with open(bindingInterfacePath, mode='w') as f:
