@@ -1,0 +1,167 @@
+<?xml version='1.0' encoding='utf-8'?>
+<FrameLayout 
+    android___id="@+id/root" 
+    android___layout_height="match_parent" 
+    android___layout_width="match_parent" 
+    xmlns___android="http://schemas.android.com/apk/res/android" 
+    xmlns___app="http://schemas.android.com/apk/res-auto" 
+    xmlns___tools="http://schemas.android.com/toolsroot">
+
+    <FrameLayout 
+        android___id="@+id/design" 
+        android___layout_height="570dp" 
+        android___layout_marginLeft="-142dp" 
+        android___layout_marginTop="267dp" 
+        android___layout_width="1426dp">
+
+        <ImageView 
+            android___id="@+id/brush_stroke" 
+            android___layout_height="413dp" 
+            android___layout_marginLeft="0dp" 
+            android___layout_marginTop="0dp" 
+            android___layout_width="1426dp" 
+            app___srcCompat="@drawable/brush_stroke">
+        </ImageView>
+
+        <ImageView 
+            android___id="@+id/rectangle" 
+            android___layout_height="80dp" 
+            android___layout_marginLeft="193dp" 
+            android___layout_marginTop="490dp" 
+            android___layout_width="460dp" 
+            app___srcCompat="@drawable/rectangle">
+        </ImageView>
+    </FrameLayout>
+
+    <FrameLayout 
+        android___id="@+id/images" 
+        android___layout_height="1196dp" 
+        android___layout_marginLeft="546dp" 
+        android___layout_marginTop="-174dp" 
+        android___layout_width="1226dp">
+
+        <ImageView 
+            android___id="@+id/waffel" 
+            android___layout_height="954dp" 
+            android___layout_marginLeft="551dp" 
+            android___layout_marginTop="0dp" 
+            android___layout_width="675dp" 
+            app___srcCompat="@drawable/waffel">
+        </ImageView>
+
+        <ImageView 
+            android___id="@+id/food" 
+            android___layout_height="27dp" 
+            android___layout_marginLeft="528dp" 
+            android___layout_marginTop="401dp" 
+            android___layout_width="23dp" 
+            app___srcCompat="@drawable/food">
+        </ImageView>
+
+        <ImageView 
+            android___id="@+id/food_1" 
+            android___layout_height="27dp" 
+            android___layout_marginLeft="319dp" 
+            android___layout_marginTop="911dp" 
+            android___layout_width="23dp" 
+            app___srcCompat="@drawable/food_1">
+        </ImageView>
+
+        <ImageView 
+            android___id="@+id/food_2" 
+            android___layout_height="27dp" 
+            android___layout_marginLeft="380dp" 
+            android___layout_marginTop="331dp" 
+            android___layout_width="27dp" 
+            app___srcCompat="@drawable/food_2">
+        </ImageView>
+
+        <ImageView 
+            android___id="@+id/tomato_sauce" 
+            android___layout_height="208dp" 
+            android___layout_marginLeft="261dp" 
+            android___layout_marginTop="420dp" 
+            android___layout_width="211dp" 
+            app___srcCompat="@drawable/tomato_sauce">
+        </ImageView>
+
+        <ImageView 
+            android___id="@+id/tomato" 
+            android___layout_height="239dp" 
+            android___layout_marginLeft="130dp" 
+            android___layout_marginTop="168dp" 
+            android___layout_width="237dp" 
+            app___srcCompat="@drawable/tomato">
+        </ImageView>
+
+        <ImageView 
+            android___id="@+id/orange" 
+            android___layout_height="272dp" 
+            android___layout_marginLeft="0dp" 
+            android___layout_marginTop="924dp" 
+            android___layout_width="276dp" 
+            app___srcCompat="@drawable/orange">
+        </ImageView>
+    </FrameLayout>
+
+    <FrameLayout 
+        android___id="@+id/text" 
+        android___layout_height="443dp" 
+        android___layout_marginLeft="92dp" 
+        android___layout_marginTop="398dp" 
+        android___layout_width="1627dp">
+
+        <ImageView 
+            android___id="@+id/title" 
+            android___layout_height="122dp" 
+            android___layout_marginLeft="24dp" 
+            android___layout_marginTop="0dp" 
+            android___layout_width="506dp" 
+            app___srcCompat="@drawable/title">
+        </ImageView>
+
+        <ImageView 
+            android___id="@+id/image_20_off" 
+            android___layout_height="96dp" 
+            android___layout_marginLeft="151dp" 
+            android___layout_marginTop="115dp" 
+            android___layout_width="441dp" 
+            app___srcCompat="@drawable/image_20_off">
+        </ImageView>
+
+        <ImageView 
+            android___id="@+id/voucher_id_56893" 
+            android___layout_height="30dp" 
+            android___layout_marginLeft="0dp" 
+            android___layout_marginTop="385dp" 
+            android___layout_width="379dp" 
+            app___srcCompat="@drawable/voucher_id_56893">
+        </ImageView>
+
+        <ImageView 
+            android___id="@+id/web" 
+            android___layout_height="27dp" 
+            android___layout_marginLeft="899dp" 
+            android___layout_marginTop="416dp" 
+            android___layout_width="728dp" 
+            app___srcCompat="@drawable/web">
+        </ImageView>
+    </FrameLayout>
+
+    <FrameLayout 
+        android___id="@+id/logo" 
+        android___layout_height="107dp" 
+        android___layout_marginLeft="53dp" 
+        android___layout_marginTop="50dp" 
+        android___layout_width="386dp">
+
+        <ImageView 
+            android___id="@+id/place_your_logo_here_double_click_to_edit" 
+            android___layout_height="107dp" 
+            android___layout_marginLeft="0dp" 
+            android___layout_marginTop="0dp" 
+            android___layout_width="386dp" 
+            app___srcCompat="@drawable/place_your_logo_here_double_click_to_edit">
+        </ImageView>
+    </FrameLayout>
+</FrameLayout>
