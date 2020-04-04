@@ -6,7 +6,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.databinding.ObservableField
 import com.sample.myapplication.binding.SampleBinding
 import com.sample.myapplication.databinding.ActivityMainBinding
-import com.sample.myapplication.enum.Test
+import com.sample.myapplication.enums.Test
 
 class MainActivity : AppCompatActivity(), SampleBinding {
 

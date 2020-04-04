@@ -111,8 +111,7 @@ bindingImport = {
 bindingType = {
 	"string": "ObservableField<String>"
 }
-
-enumDirectory = 'com/sample/myapplication/enum'
+enumDirectory = 'com/sample/myapplication/enums'
 class RootLayer(NodeLayer):
 	def __init__(self, psdPath):
 		psd = PSDImage.open(psdPath)
@@ -139,6 +138,10 @@ class RootLayer(NodeLayer):
 		variable = etree.SubElement(data, 'variable')
 		variable.set("name", bindingName)
 		variable.set("type", bindingClass)
+		import1 = etree.SubElement(data, 'import')
+		import1.set("type", "%s.%s" % (enumDirectory.replace('/', '.'), "Test"))
+		import2 = etree.SubElement(data, 'import')
+		import2.set("type", "android.view.View")
 
 	def __dumpLayout(self, layout):
 		root = etree.SubElement(layout, self.elementName)
@@ -170,7 +173,10 @@ class RootLayer(NodeLayer):
 				if (i + 1) == n:
 					elem[i].tail = '\n' + level * INDENT_SPACE
 				else:
-					elem[i].tail = '\n\n' + (level + 1) * INDENT_SPACE
+					if elem.tag == 'data':
+						elem[i].tail = '\n' + (level + 1) * INDENT_SPACE
+					else:
+						elem[i].tail = '\n\n' + (level + 1) * INDENT_SPACE
 				self.__indent(elem[i], level + 1)
 		else:
 			elem.text = '\n' + level * INDENT_SPACE

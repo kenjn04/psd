@@ -7,10 +7,8 @@
     <data>
         <variable name="binding" type="com.sample.myapplication.binding.SampleBinding">
         </variable>
-        <import type="com.sample.myapplication.enums.Test">
-        </import>
-        <import type="android.view.View">
-        </import>
+        <import type="com.sample.myapplication.enums.Test"/>
+        <import type="android.view.View"/>
     </data>
 
     <FrameLayout
@@ -24,7 +22,9 @@
             android:layout_marginLeft="-142dp"
             android:layout_marginTop="267dp"
             android:layout_width="1426dp"
-            app:srcCompat="@drawable/brush_stroke">
+            app:srcCompat="@drawable/brush_stroke"
+            android:visibility="@{binding.mode == Test.BBB ? View.VISIBLE : View.GONE}"
+            >
         </ImageView>
 
         <ImageView
