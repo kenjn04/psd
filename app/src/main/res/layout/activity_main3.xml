@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:bind="http://schemas.android.com/tools">
     <data>
-        <variable name="binding" type="com.sample.myapplication.SampleBinding"/>
+        <variable name="binding" type="com.sample.myapplication.binding.SampleBinding"/>
     </data>
 
     <FrameLayout

@@ -98,6 +98,21 @@ class NodeLayer(Layer):
 				print("Ignore at this moment: %s" % child)
 		return layers
 
+srcDirectory = "../app/src/main/java"
+bindingDirectory = 'com/sample/myapplication/binding'
+bindingInterface = "SampleBinding"
+bindingName = "binding"
+bindingInterfacePath = "%s/%s/%s.kt" % (srcDirectory, bindingDirectory, bindingInterface)
+bindingClass = ("%s/%s" % (bindingDirectory, bindingInterface)).replace('/', '.')
+bindingImportBase = "androidx.databinding"
+bindingImport = {
+	"string": "ObservableField"
+}
+bindingType = {
+	"string": "ObservableField<String>"
+}
+
+enumDirectory = 'com/sample/myapplication/enum'
 class RootLayer(NodeLayer):
 	def __init__(self, psdPath):
 		psd = PSDImage.open(psdPath)
@@ -115,13 +130,15 @@ class RootLayer(NodeLayer):
 		layout = etree.Element('layout')
 		self.__dumpBinding(layout)
 		self.__dumpLayout(layout)
+		self.__writeBindingInterface()
+		self.__writeEnum()
 		self.__writeXml(layout)
 
 	def __dumpBinding(self, layout):
 		data = etree.SubElement(layout, 'data')
 		variable = etree.SubElement(data, 'variable')
-		variable.set("name", "binding")
-		variable.set("type", "com.sample.myapplication.SampleBinding")
+		variable.set("name", bindingName)
+		variable.set("type", bindingClass)
 
 	def __dumpLayout(self, layout):
 		root = etree.SubElement(layout, self.elementName)
@@ -158,6 +175,28 @@ class RootLayer(NodeLayer):
 				self.__indent(elem[i], level + 1)
 		else:
 			elem.text = '\n' + level * INDENT_SPACE
+
+	def __writeBindingInterface(self):
+		with open(bindingInterfacePath, mode='w') as f:
+			f.write("package %s\n\n" % bindingDirectory.replace('/', '.'))
+			f.write("import %s.%s\n" % (bindingImportBase, bindingImport['string']))
+			f.write("\ninterface %s {\n\n" % bindingInterface)
+			f.write("%sval %s: %s\n" % (INDENT_SPACE, "name", bindingType['string']))
+			f.write("\n}")
+
+	def __writeEnum(self):
+		enumConfig = {
+			"name": "Test",
+			"elems": ["AAA", "BBB", "CCC"]
+		}
+		name = enumConfig['name']
+		elems = enumConfig['elems']
+		enumFilePath = "%s/%s/%s.kt" % (srcDirectory, enumDirectory, name)
+		with open(enumFilePath, mode='w') as f:
+			f.write("package %s\n\n" % enumDirectory.replace('/', '.'))
+			f.write("enum class %s {\n" % name)
+			f.write("%s%s\n" % (INDENT_SPACE, ", ".join(elems)))
+			f.write("}")
 
 class GroupLayer(NodeLayer):
 	def __init__(self, group, level):
